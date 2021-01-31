@@ -2,25 +2,34 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import NavBar from "./components/NavBar";
-import Mantra from "./components/Mantra";
+import Dashboard from "./pages/Dashboard";
+import Goals from "./pages/Goals";
+import Journal from "./pages/Journal";
+import Resources from "./pages/Resources";
+import Login from "./pages/Login";
 
 function App() {
   return (
     <Router>
       <div>
         <NavBar />
-        <Mantra></Mantra>
-        {/* <Switch>
-          <Route exact path={["/", "/books"]}>
-            <Books />
+        <Switch>
+          <Route exact path={["/", "/dashboard"]}>
+            <Dashboard></Dashboard>
           </Route>
-          <Route exact path="/books/:id">
-            <Detail />
+          <Route exact path={["/login"]}>
+            <Login></Login>
           </Route>
-          <Route>
-            <NoMatch />
+          <Route exact path="/goals">
+            <Goals></Goals>
           </Route>
-        </Switch> */}
+          <Route exact path="/journal">
+            <Journal></Journal>
+          </Route>
+          <Route exact path="/resources">
+            <Resources></Resources>
+          </Route>
+        </Switch>
       </div>
     </Router>
   );
