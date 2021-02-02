@@ -6,13 +6,13 @@ function Nav() {
       <a className="navbar-brand" href="/">
         Dashboard
       </a>
-      <a className="navbar-brand" href="/">
+      <a className="navbar-brand" href="/goals">
         My Goals
       </a>
-      <a className="navbar-brand" href="/">
+      <a className="navbar-brand" href="/journal">
         My Journal
       </a>
-      <a className="navbar-brand" href="/">
+      <a className="navbar-brand" href="/resources">
         All Resources
       </a>
       <p>Welcome User</p>

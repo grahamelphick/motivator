@@ -7,6 +7,7 @@ import Goals from "./pages/Goals";
 import Journal from "./pages/Journal";
 import Resources from "./pages/Resources";
 import Login from "./pages/Login";
+import NewGoal from "./pages/NewGoal";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route exact path="/goals">
             <Goals></Goals>
+          </Route>
+          <Route exact path="/new-goal">
+            <NewGoal></NewGoal>
           </Route>
           <Route exact path="/journal">
             <Journal></Journal>
