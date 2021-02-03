@@ -5,7 +5,7 @@ import Col from "../components/Col";
 import Row from "../components/Row";
 import "./pages.css"
 
-function Dashboard() {
+function ResourcesPage() {
     return (
         <Container>
             <Row>
@@ -17,4 +17,4 @@ function Dashboard() {
     );
 }
 
-export default Dashboard;
+export default ResourcesPage;

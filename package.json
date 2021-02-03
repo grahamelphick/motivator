@@ -1,0 +1,27 @@
+{
+  "name": "motivator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node scripts/seedDB.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grahamelphick/motivator.git"
+  },
+  "author": "Graham Elphick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grahamelphick/motivator/issues"
+  },
+  "homepage": "https://github.com/grahamelphick/motivator#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.11.14"
+  }
+}

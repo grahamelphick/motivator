@@ -5,7 +5,7 @@ import Row from "../components/Row";
 import "./pages.css"
 import Button from "../components/Button";
 
-function Dashboard() {
+function NewGoalPage() {
     return (
         <Container>
             <Row>
@@ -31,4 +31,4 @@ function Dashboard() {
     );
 }
 
-export default Dashboard;
+export default NewGoalPage;

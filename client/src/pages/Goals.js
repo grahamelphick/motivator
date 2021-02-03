@@ -1,13 +1,15 @@
 import React from "react";
+import { Route } from 'react-router-dom'
 import GoalsList from "../components/GoalsList";
 import Container from "../components/Container";
 import Col from "../components/Col";
 import Row from "../components/Row";
-import "./pages.css"
+import "./pages.css";
 import Button from "../components/Button";
 import Resources from "../components/ResourcesList";
 
-function Dashboard() {
+function GoalPage() {
+
     return (
         <Container>
             <Row>
@@ -15,13 +17,17 @@ function Dashboard() {
                     <GoalsList></GoalsList>
                 </Col>
                 <Col size="md-6">
-                    <Button purpose="Start something new"></Button>
+                    <Route render={({ history }) => (
+                        <Button
+                            purpose='Start something new'
+                            onClick={() => { history.push('/new-goal') }}
+                        ></Button>
+                    )} />
                     <Resources></Resources>
                 </Col>
-                
             </Row>
         </Container>
     );
 }
 
-export default Dashboard;
+export default GoalPage;

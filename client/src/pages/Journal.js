@@ -4,19 +4,27 @@ import Container from "../components/Container";
 import Col from "../components/Col";
 import Row from "../components/Row";
 import "./pages.css"
+import Button from "../components/Button";
 
-function Dashboard() {
+function JournalPage() {
     return (
         <Container>
             <Row>
-                
-                <Col size="md-12">
+                <h1>My Journal</h1>
+            </Row>
+            <Row>
+                <Col size="md-4">
                     <Journal></Journal>
                 </Col>
-               
+                <Col size="md-8">
+                    <div style={{ width: "600px", height: "500px", border: "5px solid #000" }}></div>
+                </Col>
+            </Row>
+            <Row>
+                <Button purpose="Submit Entry"></Button>
             </Row>
         </Container>
     );
 }
 
-export default Dashboard;
+export default JournalPage;
