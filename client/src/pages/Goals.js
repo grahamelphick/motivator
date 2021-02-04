@@ -19,9 +19,8 @@ function GoalPage() {
                 <Col size="md-6">
                     <Route render={({ history }) => (
                         <Button
-                            purpose='Start something new'
                             onClick={() => { history.push('/new-goal') }}
-                        ></Button>
+                        >Start something new:</Button>
                     )} />
                     <Resources></Resources>
                 </Col>

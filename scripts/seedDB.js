@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-mongoose.connect(
-  process.env.MONGODB_URI ||
-  "mongodb://localhost/goals"
-);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/goals");
 
 const goalSeed = [
   {
-    mainGoal: "Learn Italian",
+    mainGoal: {
+      title: "Learn Italian",
+      dueDate: "040421",
+    },
     subTasks: [
       {
         task: "Learn five words",
@@ -22,17 +22,18 @@ const goalSeed = [
         task: "Say 'I am 23 years old'",
         dueDate: "030321",
       },
-    ]
-  }
+    ],
+  },
 ];
 
 db.Goal
+  .remove({})
   .then(() => db.Goal.collection.insertMany(goalSeed))
-  .then(data => {
+  .then((data) => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
   })
-  .catch(err => {
+  .catch((err) => {
     console.error(err);
     process.exit(1);
   });

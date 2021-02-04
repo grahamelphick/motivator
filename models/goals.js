@@ -5,6 +5,10 @@ const goalsSchema = new Schema({
   mainGoal: {
     type: String,
     required: true,
+    dueDate: {
+      type: Date,
+      required: false,
+    },
   },
   subTasks: {
     type: Array,

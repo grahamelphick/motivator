@@ -1,10 +1,10 @@
 import React from "react";
 
-function Button(props) {
+function Button({ props, children, ...buttonProps }) {
     return (
-        <button>
-            {props.purpose}
-            {props.onClick}
+        <button {...buttonProps}>
+            {/* {props.purpose} */}
+            {children}
         </button>
     );
 }
