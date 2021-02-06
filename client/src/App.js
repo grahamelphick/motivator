@@ -8,9 +8,19 @@ import Journal from "./pages/Journal";
 import Resources from "./pages/Resources";
 import Login from "./pages/Login";
 import NewGoal from "./pages/NewGoal";
+// import firebase from "firebase";
 
 function App() {
+  // const firebaseApp = firebase.apps[0]; 
   return (
+    <div>
+    {/* <div>
+      <h1>React & Firebase</h1>
+      <h2>By @farazamiruddin</h2>
+      <code> */}
+        {/* <pre>{JSON.stringify(firebaseApp.options, null, 2)}</pre> */}
+      {/* </code>
+    </div> */}
     <Router>
       <div>
         <NavBar />
@@ -35,7 +45,8 @@ function App() {
           </Route>
         </Switch>
       </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 
