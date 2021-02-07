@@ -1,14 +1,15 @@
-import React from "react";
+// import React from "react";
 
-function GoalsList() {
-  return (
-    <div>
-          <h1 style={{ fontSize: "15px" }}> Things I want to accomplish:</h1>
-      <div
-        style={{ width: "250px", height: "500px", border: "5px solid #000" }}
-      ></div>
-    </div>
-  );
-}
+// // This file exports both the List and ListItem components
 
-export default GoalsList;
+// export default function Goals({ children }) {
+//   return (
+//     <div className="list-overflow-container">
+//       <ul className="list-group">{children}</ul>
+//     </div>
+//   );
+// }
+
+// export default function GoalListItem({ children }) {
+//   return <li className="list-group-item">{children}</li>;
+// }

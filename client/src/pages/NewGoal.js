@@ -5,7 +5,6 @@ import Row from "../components/Row";
 import "./pages.css"
 import Button from "../components/Button";
 import API from "../utils/API"
-import GoalPage from "./Goals";
 import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
 
@@ -27,7 +26,7 @@ function NewGoalPage() {
 
     // }
 
-    const [subtasks, setSubtasks] = useState([])
+    const [goals, setGoals] = useState([])
     const [formObject, setFormObject] = useState({})
 
     // Load all subtasks and store them with setsubtasks
@@ -40,7 +39,7 @@ function NewGoalPage() {
         console.log("load ST");
         API.getSubtasks()
             .then(res =>
-                setSubtasks(res.data)
+                setGoals(res.data)
             )
             .catch(err => console.log(err));
     };
@@ -105,13 +104,13 @@ function NewGoalPage() {
                 </Col>
             </Row>
             <Row>
-                {subtasks.length ? (
+                {goals.length ? (
                     <List>
-                        {subtasks.map(book => (
-                            <ListItem key={book._id}>
-                                <Link to={"/books/" + book._id}>
+                        {goals.map(goal => (
+                            <ListItem key={goal._id}>
+                                <Link to={"/goals/" + goal._id}>
                                     <strong>
-                                        {book.title} by {book.author}
+                                        {goal.subtask} by {goal.duedate}
                                     </strong>
                                 </Link>
                                 {/* <DeleteBtn onClick={() => deleteBook(book._id)} /> */}
