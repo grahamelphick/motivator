@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/grahamelphick/motivator/issues"
   },
-  "homepage": "https://github.com/grahamelphick/motivator#readme",
+  "homepage": "https://github.com/grahamelphick/motivator#client/src/App.js",
   "dependencies": {
     "axios": "^0.21.1",
     "concurrently": "^5.3.0",

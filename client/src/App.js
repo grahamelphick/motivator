@@ -82,7 +82,7 @@ function App() {
     //     <input type="submit" name="submit"></input>
     //   </form> */}
     <div>  
-    <Router>
+      <Router basename="/client">
         <NavBar />
         <Switch>
           <Route exact path={["/", "/dashboard"]}>
