@@ -30,62 +30,84 @@ function ResourcesPage() {
     };
 
     function loadResources() {
-        const goalQuery=[];
+        const goalQuery = [];
         console.log(books.length)
         let i;
         for (i = 0; i < books.length; i++) {
 
             goalQuery.push(books[i].goal)
         }
-        console.log(goalQuery);
-        console.log(books);
-        goalQuery.forEach(createResource, setResourcesResults);
-        console.log(resourcesResults)
-    
-
-        const resResult = [];
-
-        function createResource(item, index) {
-
-
+        console.log("goalQuery: ", goalQuery);
+        console.log("todos: ", books);
+        // goalQuery.forEach(createResource);
+        const requests = goalQuery.map(item => {
             const options = {
                 method: 'GET',
-                url: `https://google-search3.p.rapidapi.com/api/v1/search/q=${goalQuery[index]}&num=10`,
+                url: `https://google-search3.p.rapidapi.com/api/v1/search/q=${item}&num=10`,
                 headers: {
                     'x-rapidapi-key': env.GOOGLE_API_KEY,
                     'x-rapidapi-host': env.GOOGLE_HOST
                 }
             };
 
-            axios.request(options).then(function (response) {
-                resResult.push(response.data.results[0].title)
-                console.log(resResult)
+            return axios.request(options)
+        })
+        Promise.all(requests).then((values) => {
+            setResourcesResults(values.map(value => value.data.results[0]))
+            console.log(resourcesResults)
+        })
+
+        // function createResource(item, index) {
+
+
+
+        //     const options = {
+        //         method: 'GET',
+        //         url: `https://google-search3.p.rapidapi.com/api/v1/search/q=${goalQuery[index]}&num=10`,
+        //         headers: {
+        //             'x-rapidapi-key': env.GOOGLE_API_KEY,
+        //             'x-rapidapi-host': env.GOOGLE_HOST
+        //         }
+        //     };
+
+        //     axios.request(options).then(function (response) {
+        //         // setResourcesResultsObject({ ...resourcesResultsObject, title: response.data.results[0].title, link: response.data.results[0].link });
+        //         // console.log(resourcesResultsObject);
+        //         // console.log("response: ", response)
+        //         // resResult.push(response.data.results[0])
+        //         // console.log("resResult: ", resResult)
+        //         setResourcesResults([...resourcesResults, response.data.results[0]])
+        //         console.log("resourcesResults: ", resourcesResults)
+
+        //         // resResultLink.push(response.data.results[0].link)
+        //         // console.log("resresultLink: ", resResultLink)
+        //         // setResourcesResultsLink(resResultLink)
+        //         // console.log("resourcesResults: ", resResultLink)
                 
-            }).catch(function (error) {
-                console.error(error);
-            });
-        }
+        //     }).catch(function (error) {
+        //         console.error(error);
+        //     });
+        // }
     };
 
     // let goalQuery;
    
 
     return (
-        <Container>
-            <Row>
+        <Container>            
+            <Row>        
                 <Col size="md-12">
-                    <ResourcesList>
-                        <div>
-                            <List>
+                    <div>
+                        <List>
                                 {resourcesResults.map(resResult => (
-                                    <ListItem key={resResult._id}>
+                                    <ListItem key={resourcesResults._id}>
+                                        <a href={resResult.link}>{resResult.title}</a>
                                         {/* {book.goal} */}
                                         {/* <DeleteBtn onClick={() => deleteBook(book._id)} /> */}
                                     </ListItem>
                                 ))}
-                            </List>
+                        </List>
                         </div>
-                    </ResourcesList>
                 </Col>
             </Row>
         </Container>

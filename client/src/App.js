@@ -8,11 +8,81 @@ import Journal from "./pages/Journal";
 import Resources from "./pages/Resources";
 import Login from "./pages/Login";
 import NewGoal from "./pages/NewGoal";
+import { useUser } from 'reactfire';
+import Login2 from "./components/Login2.js";
+import Logout from "./components/Logout.js";
+import Signup from "./components/Signup";
+import firebase from "firebase/app";
+import "firebase/auth";
 
-function App(pops) {
+function App() {
+
+  // const [user, setUser] = useState({
+  //   email: '',
+  //   password: '',
+  // });
+
+  // // onChange function
+  // const handleChange = e => {
+  //   setUser({
+  //     ...user,
+  //     [e.target.name]: e.target.value,
+  //     error: '',
+  //   })
+  // };
+
+  // firebase.auth().createUserWithEmailAndPassword(email, password)
+  //   .then((userCredential) => {
+  //     // Signed in 
+  //     var user = userCredential.user;
+  //     // ...
+  //   })
+  //   .catch((error) => {
+  //     var errorCode = error.code;
+  //     var errorMessage = error.message;
+  //     // ..
+  //   });
+  
+  // firebase.auth().signInWithEmailAndPassword(email, password)
+  //   .then((userCredential) => {
+  //     // Signed in
+  //     var user = userCredential.user;
+  //     // ...
+  //   })
+  //   .catch((error) => {
+  //     var errorCode = error.code;
+  //     var errorMessage = error.message;
+  //   });
+
+
+
+
+  const user = useUser();
+
+
   return (
     <div>
- <Router>
+    <div className="App">
+      {
+        user &&
+        <Logout />
+      }
+      {
+        !user &&
+        <>
+          <Signup />
+          <Login />
+        </>
+      }
+    </div>
+    {/* // <div>
+    //   <form onSubmit={handleSubmit}>
+    //     <input type="text" name="email" placeholder="email"></input>
+    //     <input type="text" name="password" placeholder="password"></input>
+    //     <input type="submit" name="submit"></input>
+    //   </form> */}
+    <div>  
+    <Router>
         <NavBar />
         <Switch>
           <Route exact path={["/", "/dashboard"]}>
@@ -35,6 +105,7 @@ function App(pops) {
           </Route>
         </Switch>
       </Router>
+      </div>
     </div>
   );
 }

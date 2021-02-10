@@ -14,6 +14,11 @@ import GoalsList from "../components/GoalsList";
 
 
 function Dashboard() {
+
+    // useEffect(() => {
+    //     API.getGoalsByUser
+    // }, [props.user])
+
     return (
         <div>
             <Container>

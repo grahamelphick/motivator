@@ -83,7 +83,7 @@ function Goals() {
                             disabled={!(formObject.goal)}
                             onClick={handleFormSubmit}
                         >
-                            Submit Book
+                            Submit Goal
               </FormBtn>
                     </form>
                 </Col>
