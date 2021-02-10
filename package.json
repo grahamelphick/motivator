@@ -30,6 +30,13 @@
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.11.14",
-    "react-dotenv": "^0.1.3"
+    "react-dotenv": "^0.1.3",
+    "request": "^2.88.2"
+  },
+  "react-dotenv": {
+    "whitelist": [
+      "GCSE_API_KEY",
+      "GCSE_SEARCH_ID"
+    ]
   }
 }

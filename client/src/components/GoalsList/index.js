@@ -40,7 +40,7 @@ function GoalsList() {
     return (
         <div>
             <Col size="md-6 sm-12">
-                <h1>Books On My List</h1>
+                <h1>My Goals</h1>
                 <List>
                     {books.map(book => (
                         <ListItem key={book._id}>

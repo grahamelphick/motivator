@@ -62,12 +62,12 @@ function Goals() {
         <Container fluid>
             <Row>
                 <Col size="md-6">
-                    <h1>What Books Should I Read?</h1>
+                    <h1>Add Goal</h1>
                     <form>
                         <Input
                             onChange={handleInputChange}
                             name="goal"
-                            placeholder="Title (required)"
+                            placeholder="Enter Goal"
                         />
                         {/* <Input
                             onChange={handleInputChange}
@@ -88,7 +88,7 @@ function Goals() {
                     </form>
                 </Col>
                 <Col size="md-6 sm-12">
-                    <h1>Books On My List</h1>
+                    <h1>My Goals</h1>
                     {books.length ? (
                         <List>
                             {books.map(book => (
