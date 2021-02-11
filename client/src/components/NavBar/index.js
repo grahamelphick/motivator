@@ -5,7 +5,7 @@ import "react-bootstrap"
 
 function Nav() {
   return (
-    <nav class="navbar navbar-expand-md navbar-light bg-dark">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
       <div class="container-fluid">
       <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul className="navbar-nav">
