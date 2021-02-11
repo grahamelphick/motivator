@@ -7,14 +7,10 @@ import firebaseConfig from "../src/firebaseConfig";
 import { FirebaseAppProvider } from 'reactfire';
 
 
-// firebase.initializeApp(firebaseConfig);
-
 ReactDOM.render(
-  <FirebaseAppProvider firebaseConfig={firebaseConfig}>
       <React.StrictMode>
         <App />
-      </React.StrictMode>
-  </FirebaseAppProvider>,
+      </React.StrictMode>,
   document.getElementById('root')
 );
 

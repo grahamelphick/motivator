@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from "react";
-import Mantra from "../components/Mantra";
-import { List, ListItem } from "../components/List";
+import React, { useContext } from "react";
+// import Mantra from "../components/Mantra";
+// import { List, ListItem } from "../components/List";
 import ResourcesList from "../components/ResourcesList";
-import Journal from "../components/Journal";
+// import Journal from "../components/Journal";
 import Container from "../components/Container";
 import Col from "../components/Col";
 import Row from "../components/Row";
 import "./pages.css";
-import API from "../utils/API";
-import { Input, TextArea, FormBtn } from "../components/Form";
+// import API from "../utils/API";
+// import { Input, TextArea, FormBtn } from "../components/Form";
 import GoalsList from "../components/GoalsList";
+import firebaseConfig from "../firebaseConfig";
+import { AuthContext } from "../components/Auth";
+import { Redirect } from "react-router-dom";
 
 function Dashboard() {
-
-    // useEffect(() => {
-    //     API.getGoalsByUser
-    // }, [props.user])
-
+    const { currentUser } = useContext(AuthContext);
+    if (!currentUser) {
+        return <Redirect to="/login" />;
+    }
     return (
         <div>
             <Container>

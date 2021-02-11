@@ -1,62 +1,40 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./components/Home";
+import LogIn from "./components/Login";
+import SignUp from "./components/Signup";
+import { AuthProvider } from "./components/Auth";
+// import DB from "./components/DB";
+// import React from "react";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import NavBar from "./components/NavBar";
 import Dashboard from "./pages/Dashboard";
 import Goals from "./pages/Goals";
 import Journal from "./pages/Journal";
 import Resources from "./pages/Resources";
-import Login from "./pages/Login";
-import NewGoal from "./pages/NewGoal";
-import { useUser } from 'reactfire';
-import Login2 from "./components/Login2.js";
-import Logout from "./components/Logout.js";
-import Signup from "./components/Signup";
-import firebase from "firebase/app";
-import "firebase/auth";
-
-function App() {
-
- 
-  const user = useUser();
+// import Login from "./pages/LoginPage";
+// import NewGoal from "./pages/NewGoal";
+// import { useUser } from 'reactfire';
+// import Logout from "./components/Logout/";
+// import Login from "./components/Login";
+// import Signup from "./components/Signup";
+// import firebase from "firebase/app";
+// import "firebase/auth";
 
 
+const App = () => {
   return (
     <div>
-    {/* <div className="App">
-      {
-        user &&
-        <Logout />
-      }
-      {
-        !user &&
-        <>
-          <Signup />
-          <Login />
-        </>
-      }
-    </div> */}
-    {/* // <div>
-    //   <form onSubmit={handleSubmit}>
-    //     <input type="text" name="email" placeholder="email"></input>
-    //     <input type="text" name="password" placeholder="password"></input>
-    //     <input type="submit" name="submit"></input>
-    //   </form> */}
-    <div>  
+      <AuthProvider>
       <Router basename="/">
         <NavBar />
         <Switch>
           <Route exact path={["/", "/dashboard"]}>
             <Dashboard></Dashboard>
           </Route>
-          <Route exact path={["/login"]}>
-            <Login></Login>
-          </Route>
           <Route exact path="/goals">
             <Goals></Goals>
-          </Route>
-          <Route exact path="/new-goal">
-            <NewGoal></NewGoal>
           </Route>
           <Route exact path="/journal">
             <Journal></Journal>
@@ -64,11 +42,26 @@ function App() {
           <Route exact path="/resources">
             <Resources></Resources>
           </Route>
+          <Route exact path="/login" component={LogIn} />
+          <Route exact path="/signup" component={SignUp} />
         </Switch>
-      </Router>
-      </div>
+        </Router>
+      </AuthProvider>
     </div>
+
+    
   );
-}
+};
 
 export default App;
+
+{/* <AuthProvider>
+  <Router>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/login" component={LogIn} />
+      <Route exact path="/signup" component={SignUp} />
+    </Switch>
+  </Router>
+</AuthProvider> */}

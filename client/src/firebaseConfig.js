@@ -1,13 +1,17 @@
 import env from "react-dotenv";
 
-const firebaseConfig = {
-  apiKey: env.API_KEY,
-  authDomain: env.AUTH_DOMAIN,
-  projectId: env.PROJECT_ID,
-  storageBucket: env.STORAGE_BUCKET,
-  messagingSenderId: env.MESSAGING_SENDER_ID,
-  appId: env.APP_ID,
-  measurementId: env.MEASUREMENT_ID
-};
+import firebase from "firebase/app";
+import "firebase/auth";
+
+
+const firebaseConfig = firebase.initializeApp({
+  apiKey: "AIzaSyBMK_3VCbIQMnQFXbwoYD4ggkK4P6xp8tc",
+  authDomain: "motivator-214ef.firebaseapp.com",
+  projectId: "motivator-214ef",
+  storageBucket: "motivator-214ef.appspot.com",
+  messagingSenderId: "97209592545",
+  appId: "1:97209592545:web:3df9bc1b3ee0537bd625a0",
+  measurementId: "G-01B6Y2LK59"
+});
 
 export default firebaseConfig;

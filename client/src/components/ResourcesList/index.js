@@ -6,6 +6,7 @@ import Col from "../Col";
 import Row from "../Row";
 import { List, ListItem } from "../List";
 import env from "react-dotenv";
+import "./style.css"
 
 function ResourcesList() {
     const [goals, setGoals] = useState([])
@@ -56,10 +57,11 @@ function ResourcesList() {
 
     return (
         <Container>
-            <h1><a href="/resources">My Resources</a></h1>
             <Row>
+            <h1><a href="/resources">My Resources</a></h1>
                 <Col size="md-12">
                     <div>
+                        {resourcesResults.length ? (
                         <List>
                             {resourcesResults.map(resResult => (
                                 <ListItem key={resourcesResults._id}>
@@ -67,9 +69,12 @@ function ResourcesList() {
                                 </ListItem>
                             ))}
                         </List>
+                         ) : (
+                            <h3><br/>No resources yet... resources will be generated once goals have been added. You can add goals <a href="/goals"><u>here</u></a>.</h3>
+                        )}
                     </div>
-                </Col>
-            </Row>
+                    </Col>
+                </Row>
         </Container>
     );
 }

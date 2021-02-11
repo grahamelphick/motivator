@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import "react-bootstrap"
+import firebaseConfig from "../../firebaseConfig"
 
 function Nav() {
   return (
@@ -56,7 +57,7 @@ function Nav() {
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link" href="#">
-              Welcome User
+                <button style={{backgroundColor: "lightgray", border: "none"}} onClick={() => firebaseConfig.auth().signOut()}>Sign Out</button>
             </a>
           </li>
         </ul>
