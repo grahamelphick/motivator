@@ -16,9 +16,6 @@ function JournalPage() {
                 <Col size="md-4">
                     <Journal></Journal>
                 </Col>
-                <Col size="md-8">
-                    <div style={{ width: "600px", height: "500px", border: "5px solid #000" }}></div>
-                </Col>
             </Row>
             <Row>
                 <Button purpose="Submit Entry"></Button>
