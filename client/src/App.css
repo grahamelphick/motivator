@@ -1,8 +1,11 @@
-* {
-  background-color: rgb(211, 240, 211);
+body {
+  background-image: url("./assets/motivational-image.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+
 }
 
 a {
-  color: black;
+  color: rgba(255, 255, 255, 0.932);
   text-decoration: none;
 }

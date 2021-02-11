@@ -21,11 +21,10 @@ function Dashboard() {
         <div>
             <Container>
                 <Row>
-                    <Col size="md-5">
+                    <Col size="md-6">
                         <GoalsList></GoalsList>
                     </Col>
-                    <Col size="md-2"></Col>
-                    <Col size="md-5">
+                    <Col size="md-6">
                         <ResourcesList></ResourcesList>
                     </Col>
                 </Row>

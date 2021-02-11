@@ -17,52 +17,13 @@ import "firebase/auth";
 
 function App() {
 
-  // const [user, setUser] = useState({
-  //   email: '',
-  //   password: '',
-  // });
-
-  // // onChange function
-  // const handleChange = e => {
-  //   setUser({
-  //     ...user,
-  //     [e.target.name]: e.target.value,
-  //     error: '',
-  //   })
-  // };
-
-  // firebase.auth().createUserWithEmailAndPassword(email, password)
-  //   .then((userCredential) => {
-  //     // Signed in 
-  //     var user = userCredential.user;
-  //     // ...
-  //   })
-  //   .catch((error) => {
-  //     var errorCode = error.code;
-  //     var errorMessage = error.message;
-  //     // ..
-  //   });
-  
-  // firebase.auth().signInWithEmailAndPassword(email, password)
-  //   .then((userCredential) => {
-  //     // Signed in
-  //     var user = userCredential.user;
-  //     // ...
-  //   })
-  //   .catch((error) => {
-  //     var errorCode = error.code;
-  //     var errorMessage = error.message;
-  //   });
-
-
-
-
+ 
   const user = useUser();
 
 
   return (
     <div>
-    <div className="App">
+    {/* <div className="App">
       {
         user &&
         <Logout />
@@ -74,7 +35,7 @@ function App() {
           <Login />
         </>
       }
-    </div>
+    </div> */}
     {/* // <div>
     //   <form onSubmit={handleSubmit}>
     //     <input type="text" name="email" placeholder="email"></input>

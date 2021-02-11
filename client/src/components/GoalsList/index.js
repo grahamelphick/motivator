@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import Col from "../Col";
 import { List, ListItem } from "../List";
 import DeleteBtn from "../DeleteBtn";
+import "./style.css"
 
 
 
@@ -30,6 +31,7 @@ function GoalsList() {
         <div>
             <Col size="md-6 sm-12">
                 <h1><a href="/goals">My Goals</a></h1>
+                {goals.length ? (
                 <List>
                     {goals.map(goal => (
                         <ListItem key={goal._id}>
@@ -38,10 +40,12 @@ function GoalsList() {
                         </ListItem>
                     ))}
                 </List>
+                 ) : (
+                        <h3> <br />No goals yet... Click <a href="/goals"><u>here</u></a> to get started!</h3>
+                        )}
             </Col>
         </div>
-    )
-}
+    )}
                     
                 
                 

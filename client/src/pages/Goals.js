@@ -7,6 +7,7 @@ import "./pages.css";
 import API from "../utils/API";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import DeleteBtn from "../components/DeleteBtn";
+import "./Goals.css"
 
 function Goals() {
     const [goals, setGoals] = useState([])
@@ -52,8 +53,9 @@ function Goals() {
     return (
         <Container fluid>
             <Row>
+                <Col size="md-3"></Col>
                 <Col size="md-6">
-                    <h1>Add Goal</h1>
+                    <br /><br />
                     <form>
                         <Input
                             onChange={handleInputChange}
@@ -61,15 +63,15 @@ function Goals() {
                             placeholder="Enter Goal"
                             id="goalSubmit"
                         />
+                        <br/>
                         <FormBtn
                             disabled={!(formObject.goal)}
                             onClick={handleFormSubmit}
                         >
                             Submit Goal
-              </FormBtn>
+                        </FormBtn>
+                        <br/><br/>
                     </form>
-                </Col>
-                <Col size="md-6 sm-12">
                     <h1>My Goals</h1>
                     {goals.length ? (
                         <List>
@@ -81,9 +83,10 @@ function Goals() {
                             ))}
                         </List>
                     ) : (
-                            <h3>No Results to Display</h3>
+                            <h3> <br/>No goals yet... time to make some!</h3>
                         )}
                 </Col>
+                <Col size="md-3"></Col>
             </Row>
         </Container>
     );

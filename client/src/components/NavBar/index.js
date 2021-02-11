@@ -7,7 +7,7 @@ function Nav() {
   return (
     <nav class="navbar navbar-expand-md navbar-light bg-light">
       <div class="container-fluid">
-      <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link
@@ -40,7 +40,7 @@ function Nav() {
         </ul>
       </div>
       <div class="mx-auto order-0">
-        <a class="navbar-brand mx-auto" href="/">
+          <a class="navbar-brand mx-auto" href="/">
           Nudge to Success
         </a>
         <button
@@ -52,7 +52,7 @@ function Nav() {
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
-      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link" href="#">
