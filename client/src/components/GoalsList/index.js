@@ -3,12 +3,15 @@ import API from "../../utils/API";
 import Col from "../Col";
 import { List, ListItem } from "../List";
 import DeleteBtn from "../DeleteBtn";
-import "./style.css"
+import "./style.css";
+import useWindowSize from 'react-use/lib/useWindowSize';
+import Confetti from 'react-confetti';
 
 
 
 function GoalsList() {
     const [goals, setGoals] = useState([])
+    const [confettiRun, setConfettiRun] = useState(false)
 
     useEffect(() => {
         loadGoals()
@@ -23,12 +26,23 @@ function GoalsList() {
     };
 
     function deleteGoal(id) {
+        setConfettiRun(true);
         API.deleteGoal(id)
             .then(res => loadGoals())
             .catch(err => console.log(err));
     }
+
+    const { width, height } = useWindowSize()
+
     return (
         <div>
+            <Confetti
+                width={width}
+                height={height}
+                run={confettiRun}
+                numberOfPieces={2000}
+                recycle={false}
+            />
             <Col size="md-6 sm-12">
                 <h1><a href="/goals">My Goals</a></h1>
                 {goals.length ? (

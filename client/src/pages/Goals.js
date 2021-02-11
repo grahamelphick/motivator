@@ -7,14 +7,17 @@ import "./pages.css";
 import API from "../utils/API";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import DeleteBtn from "../components/DeleteBtn";
-import "./Goals.css"
+import "./Goals.css";
+import useWindowSize from 'react-use/lib/useWindowSize';
+import Confetti from 'react-confetti';
 
 function Goals() {
     const [goals, setGoals] = useState([])
     const [formObject, setFormObject] = useState({})
+    const [confettiRun, setConfettiRun] = useState(false)
 
     useEffect(() => {
-        loadGoals()
+        loadGoals();
     }, [])
 
     function loadGoals() {
@@ -26,6 +29,7 @@ function Goals() {
     };
 
     function deleteGoal(id) {
+        setConfettiRun(true);
         API.deleteGoal(id)
             .then(res => loadGoals())
             .catch(err => console.log(err));
@@ -50,8 +54,17 @@ function Goals() {
         }
     };
 
+    const { width, height } = useWindowSize()
+
     return (
         <Container fluid>
+            <Confetti
+                width={width}
+                height={height}
+                run={confettiRun}
+                numberOfPieces={2000}
+                recycle={false}
+            />
             <Row>
                 <Col size="md-3"></Col>
                 <Col size="md-6">
