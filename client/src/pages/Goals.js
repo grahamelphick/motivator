@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { List, ListItem } from "../components/List";
 import Container from "../components/Container";
 import Col from "../components/Col";
@@ -8,8 +8,10 @@ import API from "../utils/API";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import DeleteBtn from "../components/DeleteBtn";
 import "./Goals.css";
-import useWindowSize from 'react-use/lib/useWindowSize';
 import Confetti from 'react-confetti';
+import { AuthContext } from "../components/Auth";
+import { Redirect } from "react-router-dom";
+import useWindowSize from 'react-use/lib/useWindowSize';
 
 function Goals() {
     const [goals, setGoals] = useState([])
@@ -32,7 +34,7 @@ function Goals() {
         setConfettiRun(true);
         API.deleteGoal(id)
             .then(res => loadGoals())
-            .catch(err => console.log(err));
+            .catch(err => console.log(err))
     }
 
     function handleInputChange(event) {
@@ -55,6 +57,13 @@ function Goals() {
     };
 
     const { width, height } = useWindowSize()
+
+
+    const { currentUser } = useContext(AuthContext);
+    if (!currentUser) {
+        return <Redirect to="/login" />;
+    }
+
 
     return (
         <Container fluid>

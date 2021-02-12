@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import firebaseConfig from "../../firebaseConfig";
+import Container from "../Container";
+import Row from "../Row";
+import Col from "../Col";
+import { Input, FormBtn } from "../Form";
 
 const SignUp = () => {
     const [currentUser, setCurrentUser] = useState(null);
@@ -18,16 +22,27 @@ const SignUp = () => {
         return <Redirect to="/dashboard" />;
     }
     return (
-        <>
-            <h1>Sign Up</h1>
-            <form onSubmit={handleSubmit}>
-                <label for="email">Email</label>
-                <input type="email" name="email" placeholder="Email" />
-                <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Password" />
-                <button type="submit">Submit</button>
-            </form>
-        </>
+        <div>
+        <Container>
+            <Row>
+                <Col size="md-4"></Col>
+                <Col size="md-4">
+                    <h1>Sign Up</h1>
+                    <form onSubmit={handleSubmit}>
+                        <label for="email"></label>
+                        <Input type="email" name="email" placeholder="Email" />
+                        <label for="password"></label>
+                        <Input type="password" name="password" placeholder="Password" />
+                        <br />
+                        <FormBtn type="submit">Signup</FormBtn>
+                        </form>
+                        <br/>
+                        <h3>Already have an account? Login <a href="/login"><u>here</u></a>.</h3>
+                </Col>
+                <Col size="md-4"></Col>
+            </Row>
+            </Container>
+        </div>
     );
 };
 

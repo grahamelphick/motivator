@@ -7,7 +7,7 @@ import { AuthProvider } from "./components/Auth";
 // import DB from "./components/DB";
 // import React from "react";
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import './App.css';
+import "./App.css";
 import NavBar from "./components/NavBar";
 import Dashboard from "./pages/Dashboard";
 import Goals from "./pages/Goals";
@@ -22,40 +22,37 @@ import Resources from "./pages/Resources";
 // import firebase from "firebase/app";
 // import "firebase/auth";
 
-
 const App = () => {
   return (
     <div>
       <AuthProvider>
-      <Router basename="/">
-        <NavBar />
-        <Switch>
-          <Route exact path={["/", "/dashboard"]}>
-            <Dashboard></Dashboard>
-          </Route>
-          <Route exact path="/goals">
-            <Goals></Goals>
-          </Route>
-          <Route exact path="/journal">
-            <Journal></Journal>
-          </Route>
-          <Route exact path="/resources">
-            <Resources></Resources>
-          </Route>
-          <Route exact path="/login" component={LogIn} />
-          <Route exact path="/signup" component={SignUp} />
-        </Switch>
+        <Router basename="/">
+          <Switch>
+            <Route exact path={["/", "/dashboard"]}>
+              <NavBar />
+              <Dashboard></Dashboard>
+            </Route>
+            <Route exact path="/goals">
+              <NavBar />
+              <Goals></Goals>
+            </Route>
+            <Route exact path="/resources">
+              <NavBar />
+              <Resources></Resources>
+            </Route>
+            <Route exact path="/login" component={LogIn} />
+            <Route exact path="/signup" component={SignUp} />
+          </Switch>
         </Router>
       </AuthProvider>
     </div>
-
-    
   );
 };
 
 export default App;
 
-{/* <AuthProvider>
+{
+  /* <AuthProvider>
   <Router>
     <Switch>
       <Route exact path="/" component={Home} />
@@ -64,4 +61,5 @@ export default App;
       <Route exact path="/signup" component={SignUp} />
     </Switch>
   </Router>
-</AuthProvider> */}
+</AuthProvider> */
+}
