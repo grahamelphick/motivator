@@ -42,7 +42,7 @@ function ResourcesList() {
                 method: 'GET',
                 url: `https://google-search3.p.rapidapi.com/api/v1/search/q=${item}&num=10`,
                 headers: {
-                    // 'x-rapidapi-key': env.GOOGLE_API_KEY,
+                    'x-rapidapi-key': env.GOOGLE_API_KEY,
                     'x-rapidapi-host': env.GOOGLE_HOST
                 }
             };
