@@ -65,7 +65,7 @@ function ResourcesList() {
                         <List>
                             {resourcesResults.map(resResult => (
                                 <ListItem key={resourcesResults._id}>
-                                    <a href={resResult.link}>{resResult.title}</a>
+                                    <a target="_blank" href={resResult.link}>{resResult.title}</a>
                                 </ListItem>
                             ))}
                         </List>
