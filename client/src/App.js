@@ -36,6 +36,10 @@ const App = () => {
               <NavBar />
               <Goals></Goals>
             </Route>
+            <Route exact path="/journal">
+              <NavBar />
+              <Journal></Journal>
+            </Route>
             <Route exact path="/resources">
               <NavBar />
               <Resources></Resources>

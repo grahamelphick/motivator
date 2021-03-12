@@ -82,7 +82,7 @@ function Goals() {
                         <Input
                             onChange={handleInputChange}
                             name="goal"
-                            placeholder="Enter Goal"
+                            placeholder="What do you want to do?"
                             id="goalSubmit"
                         />
                         <br/>
@@ -90,7 +90,7 @@ function Goals() {
                             disabled={!(formObject.goal)}
                             onClick={handleFormSubmit}
                         >
-                            Submit Goal
+                            Submit
                         </FormBtn>
                         <br/><br/>
                     </form>

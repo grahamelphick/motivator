@@ -29,7 +29,15 @@ function Nav() {
             >
               My Goals
             </Link>
-          </li>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/journal"
+                className={window.location.pathname === "/journal" ? "nav-link active" : "nav-link"}
+              >
+                My Journal
+            </Link>
+            </li>
           <li className="nav-item">
             <Link
               to="/resources"
