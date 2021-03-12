@@ -5,6 +5,7 @@ const goalsSchema = new Schema({
   goal: {
     type: String,
     required: true,
+    trim: true,
   },
 });
 

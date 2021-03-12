@@ -50,7 +50,7 @@ function GoalsList() {
                     {goals.map(goal => (
                         <ListItem key={goal._id}>
                             {goal.goal}
-                            <DeleteBtn onClick={() => deleteGoal(goal._id)} />
+                            <DeleteBtn deleteText="I did it!" onClick={() => deleteGoal(goal._id)} />
                         </ListItem>
                     ))}
                 </List>

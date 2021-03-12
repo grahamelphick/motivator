@@ -2,9 +2,13 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const journalsSchema = new Schema({
+    journalTitle: {
+        type: String,
+        required: true
+    },
     journal: {
         type: String,
-        required: true,
+        required: true
     },
 });
 
