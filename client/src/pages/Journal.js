@@ -65,7 +65,7 @@ function Journals() {
   }
 
   function displayEntry(journalTitle, journal) {
-      openModal(journalTitle, journal);
+    openModal(journalTitle, journal);
     // alert(journal)
   }
 
@@ -123,32 +123,40 @@ function Journals() {
           {journals.length ? (
             <List>
               {journals.map((journal) => (
-                <Button
-                  onClick={() =>
-                    displayEntry(journal.journalTitle, journal.journal)
-                  }
-                >
-                  <ListItem key={journal._id}>
-                    {journal.journalTitle}
-                    <DeleteBtn
-                      deleteText="Delete"
-                      onClick={() => deleteJournal(journal._id)}
-                    />
-
-                    <Modal
-                      isOpen={modalIsOpen}
-                      onAfterOpen={afterOpenModal}
-                      onRequestClose={closeModal}
-                      style={customStyles}
-                      contentLabel="Example Modal"
-                      key={journal._id}
-                    >
-                      <button onClick={closeModal}>Close</button>
-                      <h1 style={{ color: "black" }}>{modalTitle}</h1>
-                      {modalEntry}
-                    </Modal>
+                <div>
+                  <ListItem
+                    key={journal._id}
+                    onClick={() =>
+                      displayEntry(journal.journalTitle, journal.journal)
+                    }
+                  >
+                      <Button
+                          onClick={() =>
+                              displayEntry(journal.journalTitle, journal.journal)
+                          }
+                              style={{backgroundColor: "white", border: "none"}}
+                      >
+                          {journal.journalTitle}
+                          </Button>
+                          <img src="https://img.icons8.com/material-sharp/24/000000/delete-forever.png"
+                              onClick={() => deleteJournal(journal._id)}
+                              style={{float: "right"}}
+                          ></img>
                   </ListItem>
-                </Button>
+
+                  <Modal
+                    isOpen={modalIsOpen}
+                    onAfterOpen={afterOpenModal}
+                    onRequestClose={closeModal}
+                    style={customStyles}
+                    contentLabel="Example Modal"
+                    key={journal._id}
+                  >
+                    <button onClick={closeModal}>Close</button>
+                    <h1 style={{ color: "black" }}>{modalTitle}</h1>
+                    {modalEntry}
+                  </Modal>
+                  </div>
               ))}
             </List>
           ) : (

@@ -13,6 +13,7 @@ import GoalsList from "../components/GoalsList";
 import firebaseConfig from "../firebaseConfig";
 import { AuthContext } from "../components/Auth";
 import { Redirect } from "react-router-dom";
+import JournalList from "../components/JournalList";
 
 function Dashboard() {
     const { currentUser } = useContext(AuthContext);
@@ -23,10 +24,15 @@ function Dashboard() {
         <div>
             <Container>
                 <Row>
-                    <Col size="md-6">
+                    <Col size="md-3">
                         <GoalsList></GoalsList>
                     </Col>
-                    <Col size="md-6">
+                    <Col size="md-1"></Col>
+                    <Col size="md-4">
+                        <JournalList></JournalList>
+                    </Col>
+                    <Col size="md-1"></Col>
+                    <Col size="md-3">
                         <ResourcesList></ResourcesList>
                     </Col>
                 </Row>
