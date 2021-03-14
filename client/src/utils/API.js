@@ -5,14 +5,13 @@ export default {
   getGoals: function () {
     return axios.get("/api/goals");
   },
-   getGoal: function (id) {
+  getGoal: function (id) {
     return axios.get("/api/goals/" + id);
   },
   deleteGoal: function (id) {
     return axios.delete("/api/goals/" + id);
   },
   saveGoal: function (goalData) {
-    console.log("goal controller");
     return axios.post("/api/goals", goalData);
   },
 
@@ -26,7 +25,14 @@ export default {
     return axios.delete("/api/journals/" + id);
   },
   saveJournal: function (journalData) {
-    console.log("journal controller");
     return axios.post("/api/journals", journalData);
+  },
+
+  getMantra: function () {
+    return axios.get("/api/mantra");
+  },
+  updateMantra: function (mantraData) {
+    console.log("got to API");
+    return axios.put("/api/mantra", mantraData);
   }
 };

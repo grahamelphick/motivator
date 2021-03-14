@@ -5,7 +5,7 @@ import Col from "../components/Col";
 import Row from "../components/Row";
 import "./pages.css";
 import API from "../utils/API";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, FormBtn } from "../components/Form";
 import DeleteBtn from "../components/DeleteBtn";
 import "./Goals.css";
 import Confetti from 'react-confetti';

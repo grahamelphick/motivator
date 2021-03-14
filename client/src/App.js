@@ -4,15 +4,14 @@ import Home from "./components/Home";
 import LogIn from "./components/Login";
 import SignUp from "./components/Signup";
 import { AuthProvider } from "./components/Auth";
-// import DB from "./components/DB";
-// import React from "react";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Dashboard from "./pages/Dashboard";
 import Goals from "./pages/Goals";
 import Journal from "./pages/Journal";
 import Resources from "./pages/Resources";
+import Mantra from "./pages/Mantra"
+import { Navbar } from "react-bootstrap";
 // import Login from "./pages/LoginPage";
 // import NewGoal from "./pages/NewGoal";
 // import { useUser } from 'reactfire';
@@ -43,6 +42,10 @@ const App = () => {
             <Route exact path="/resources">
               <NavBar />
               <Resources></Resources>
+            </Route>
+            <Route exact path="/mantra">
+              <NavBar />
+              <Mantra></Mantra>
             </Route>
             <Route exact path="/login" component={LogIn} />
             <Route exact path="/signup" component={SignUp} />

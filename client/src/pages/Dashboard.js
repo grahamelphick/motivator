@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-// import Mantra from "../components/Mantra";
+import Mantra from "../components/Mantra";
 // import { List, ListItem } from "../components/List";
 import ResourcesList from "../components/ResourcesList";
 // import Journal from "../components/Journal";
@@ -22,7 +22,17 @@ function Dashboard() {
     }
     return (
         <div>
+            <br />
             <Container>
+                <Row>
+                    <Col size="md-4"></Col>
+                    <Col size="md-4">
+                    <Mantra></Mantra>
+                    </Col>
+                    <Col size="md-4"></Col>
+                </Row>
+                <br />
+                <br />
                 <Row>
                     <Col size="md-3">
                         <GoalsList></GoalsList>

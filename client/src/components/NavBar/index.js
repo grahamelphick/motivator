@@ -45,7 +45,15 @@ function Nav() {
             >
               My Resources
             </Link>
-          </li>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/mantra"
+                className={window.location.pathname === "/mantra" ? "nav-link active" : "nav-link"}
+              >
+                My Mantra
+            </Link>
+            </li>
         </ul>
       </div>
       <div class="mx-auto order-0">
