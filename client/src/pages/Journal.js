@@ -152,7 +152,7 @@ function Journals() {
                     contentLabel="Example Modal"
                     key={journal._id}
                   >
-                    <button onClick={closeModal}>Close</button>
+                    <button style={{ backgroundColor: "lightgray", border: "none" }} onClick={closeModal}>Close</button>
                     <h1 style={{ color: "black" }}>{modalTitle}</h1>
                     {modalEntry}
                   </Modal>

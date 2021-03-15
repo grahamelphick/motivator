@@ -17,5 +17,30 @@ module.exports = {
       .updateOne({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  create: function (req, res) {
+    console.log("got to create controller");
+    db.Mantra
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  
+  },
+  // find: function (req, res) {
+  //   console.log("got to find controller");
+  //   db.Mantra
+  //     .find(req.query)
+  //     .sort({ date: -1 })
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
+  // }
+  find: function (req, res) {
+    console.log("got to find controller");
+    db.Mantra
+      .find(req.query)
+      .limit(1)
+      .sort({ $natural: -1 })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
-};
+}

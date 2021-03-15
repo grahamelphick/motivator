@@ -31,6 +31,9 @@ export default {
   getMantra: function () {
     return axios.get("/api/mantra");
   },
+  saveMantra: function (mantraData) {
+    return axios.post("/api/mantra", mantraData);
+  },
   updateMantra: function (mantraData) {
     console.log("got to API");
     return axios.put("/api/mantra", mantraData);
