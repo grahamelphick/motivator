@@ -12,6 +12,7 @@ import Journal from "./pages/Journal";
 import Resources from "./pages/Resources";
 import Mantra from "./pages/Mantra"
 import { Navbar } from "react-bootstrap";
+import Footer from "./components/Footer";
 // import Login from "./pages/LoginPage";
 // import NewGoal from "./pages/NewGoal";
 // import { useUser } from 'reactfire';
@@ -51,6 +52,7 @@ const App = () => {
             <Route exact path="/signup" component={SignUp} />
           </Switch>
         </Router>
+        <Footer></Footer>
       </AuthProvider>
     </div>
   );

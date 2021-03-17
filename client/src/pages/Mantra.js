@@ -9,7 +9,7 @@ import { AuthContext } from "../components/Auth";
 import { Redirect } from "react-router-dom";
 
 function EnterMantra() {
-  const [mantra, setMantra] = useState("Just do it!");
+  const [mantra, setMantra] = useState("Seize the day!");
   const [formObject, setFormObject] = useState({});
 
   useEffect(() => {
