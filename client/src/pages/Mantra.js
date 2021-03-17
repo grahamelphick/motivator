@@ -35,8 +35,8 @@ function EnterMantra() {
       API.saveMantra({
         mantra: formObject.mantra,
       })
-          .then(res => loadMantra())
-          .catch((err) => console.log(err));
+        .then((res) => loadMantra())
+        .catch((err) => console.log(err));
     }
   }
 
@@ -53,13 +53,15 @@ function EnterMantra() {
           <h1>My Mantra</h1>
           <br />
           <br />
-                  <h2>Your current mantra is <em>{mantra}</em> </h2>
-                  <br/>
+          <h3>
+            Your current mantra is "<em>{mantra}</em>"{" "}
+          </h3>
+          <br />
           <form>
             <Input
               onChange={handleInputChange}
               name="mantra"
-              placeholder="Enter a new mantra"
+              placeholder="Enter a new mantra here"
               id="mantraSubmit"
             />
             <br />

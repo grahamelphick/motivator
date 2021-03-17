@@ -4,7 +4,7 @@ import Col from "../Col";
 import useWindowSize from "react-use/lib/useWindowSize";
 
 function DisplayMantra() {
-    const [mantra, setMantra] = useState("Just do it!");
+    const [mantra, setMantra] = useState("Seize the day!");
 
     useEffect(() => {
         loadMantra();
@@ -25,6 +25,7 @@ function DisplayMantra() {
             <h1>
                 <em><a href="./mantra">{mantra}</a></em>
             </h1>
+            <hr style={{ height: 2, color: "black" }}></hr>
         </div>
     );
 }

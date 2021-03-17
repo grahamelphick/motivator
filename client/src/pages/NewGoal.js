@@ -9,32 +9,13 @@ import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
 
 function NewGoalPage() {
-    // function createGoal() {
-    //     console.log("goal Button clicked");
-    // };
-
-    // function createSubtask() {
-    //     console.log("subtask btn clicked");
-    //     const subTasks = document.getElementsByClassName("ST-text-input").map(function() {
-    //         return this.value;
-    //     });
-    //     console.log(subTasks);
-    //     const allSTDiv = document.getElementById("all-subtasks");
-    //     for (let i = 0; i < subTasks.length; i++) {
-    //         allSTDiv.innerHTML = subTasks;
-    //     };
-
-    // }
-
     const [goals, setGoals] = useState([])
     const [formObject, setFormObject] = useState({})
 
-    // Load all subtasks and store them with setsubtasks
     useEffect(() => {
         loadSubtasks()
     }, [])
 
-    // Loads all subtasks and sets them to subtasks
     function loadSubtasks() {
         console.log("load ST");
         API.getSubtasks()
@@ -44,22 +25,12 @@ function NewGoalPage() {
             .catch(err => console.log(err));
     };
 
-    // Deletes a goal from the database with a given id, then reloads subtasks from the db
-    // function deleteGoal(id) {
-    //     API.deleteGoal(id)
-    //         .then(res => loadsubtasks())
-    //         .catch(err => console.log(err));
-    // }
-
-    // Handles updating component state when the user types into the input field
     function handleInputChange(event) {
         const { name, value } = event.target;
         setFormObject({ ...formObject, [name]: value })
         console.log(formObject)
     };
-
-    // When the form is submitted, use the API.savegoal method to save the goal data
-    // Then reload subtasks from the database
+  
     function createSubtask(event) {
         event.preventDefault();
         console.log("ST btn clicked");

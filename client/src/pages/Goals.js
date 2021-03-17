@@ -56,6 +56,10 @@ function Goals() {
         }
     };
 
+    // function resetConfetti() {
+    //     setConfettiRun(false)
+    // }
+
     const { width, height } = useWindowSize()
 
 
