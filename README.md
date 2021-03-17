@@ -15,7 +15,7 @@
 
 
 ## Description
-Nudge to Success is a central, motivation hub, designed to help people achieve their goals. The application allows the user to enter their various goals and provides them with automatically-generated resources to kickstart their journey towards completing said goals.
+Nudge to Success is a central, motivation hub, designed to help people achieve their goals. The application allows the user to enter their various goals and provides them with automatically-generated resources to kickstart their journey towards completing said goals. The user can also keep a virtual journal and edit the mantra appearing on their dashboard.
 
 ## Deployed App
 https://self-improvement-motivator.herokuapp.com/
@@ -23,6 +23,9 @@ https://self-improvement-motivator.herokuapp.com/
 ## Screenshots
 <img src="./app-screenshots/login.png" alt="Login page">
 <img src="./app-screenshots/goals.png" alt="My Goals page">
+<img src="./app-screenshots/journal.png" alt="My Journal page">
+<img src="./app-screenshots/journal-modal.png" alt="Journal entry pop-up">
+<img src="./app-screenshots/mantra.png" alt="My Mantra page">
 <img src="./app-screenshots/dashboard.png" alt="Dashboard page">
 <img src="./app-screenshots/confetti.png" alt="Confetti celebration from achieving a goal">
 
